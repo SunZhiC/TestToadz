@@ -1,4 +1,5 @@
 const { expect } = require("chai");
+const { ethers } = require("hardhat");
 
 describe("TestToadz", function () {
     it("Should do something", async function () {
