@@ -2,7 +2,7 @@
 
 TestToadz - ERC-721 NFT Testnet Faucets
 
-Inspired by this Git repository (TestToadz)[https://github.com/bokkypoobah/TestToadz]
+Inspired by this Git repository [TestToadz](https://github.com/bokkypoobah/TestToadz)
 
 Due to the closure of some test networks, it is recommended to deploy test contracts on new test networks and additional networks to facilitate testing.
 
