@@ -20,7 +20,10 @@ yarn-error.log
 .env.test.local
 .env.production.local
 .envrc.local
+.env
 
 # dependencies
 node_modules/
 Flattened.sol
+
+typechain-types

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.24;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -76,6 +76,36 @@ contract TestToadz is ERC721, Ownable {
         numAvailableTokens = updatedNumAvailableTokens;
         addressToNumOwned[msg.sender] =
             addressToNumOwned[msg.sender] +
+            quantity;
+    }
+
+    function mintTo(address to, uint256 quantity) public {
+        uint256 updatedNumAvailableTokens = numAvailableTokens;
+        require(
+            block.timestamp >= 1337133769,
+            "Sale starts at whatever this time is"
+        );
+        require(
+            quantity <= maxMintsPerTx,
+            "There is a limit on minting too many at a time!"
+        );
+        require(
+            updatedNumAvailableTokens - quantity >= 0,
+            "Minting this many would exceed supply!"
+        );
+        require(
+            addressToNumOwned[to] + quantity <= 40,
+            "Can't own more than 20 toadz"
+        );
+        require(msg.sender == tx.origin, "No contracts!");
+        for (uint256 i = 0; i < quantity; i++) {
+            uint256 tokenId = getRandomSerialToken(quantity, i);
+            _safeMint(to, tokenId);
+            updatedNumAvailableTokens--;
+        }
+        numAvailableTokens = updatedNumAvailableTokens;
+        addressToNumOwned[to] =
+            addressToNumOwned[to] +
             quantity;
     }
 
