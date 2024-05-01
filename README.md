@@ -10,7 +10,7 @@ The SameToadz smart contract at [0x07e5ce0f8f](https://etherscan.io/address/0x07
 
 |  Network   | Contract Address  |
 |  ----  | ----  | 
-| [Ethereum Sepolia](https://sepolia.etherscan.io/address/0x8c03686cf3F3ed25881032Ff1f6aeF6c52dB3d1E#writeContract)  | 0x8c03686cf3F3ed25881032Ff1f6aeF6c52dB3d1E | 
+| [Ethereum Sepolia](https://sepolia.etherscan.io/address/0xb965d63356e72168195e70cb9848F26039F48ED4#writeContract)  | 0xb965d63356e72168195e70cb9848F26039F48ED4 | 
 | [Base Sepolia](https://sepolia.basescan.org/address/0x47eb51b28aAe27A0150c0Fbaa6e627629856A905#writeContract)  | 0x47eb51b28aAe27A0150c0Fbaa6e627629856A905 | 
 | [Arbitrum Sepolia](https://sepolia.arbiscan.io/address/0x8c03686cf3F3ed25881032Ff1f6aeF6c52dB3d1E#writeContract)  | 0x8c03686cf3F3ed25881032Ff1f6aeF6c52dB3d1E | 
 | [BNB Testnet](https://testnet.bscscan.com/address/0x5Cc4Fcf6Afdc6876240fb3b1363FbBa8ce059b10#writeContract)  | 0x5Cc4Fcf6Afdc6876240fb3b1363FbBa8ce059b10 | 
