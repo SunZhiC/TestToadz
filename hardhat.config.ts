@@ -3,7 +3,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-verify";
 import '@openzeppelin/hardhat-upgrades';
-import { chains, ArbitrumSepolia, BaseSepolia, EthereumSepolia, BNBChainTestnet } from "@particle-network/chains";
+import { chains, ArbitrumSepolia, BaseSepolia, EthereumSepolia, BNBChainTestnet, BlastSepolia } from "@particle-network/chains";
 
 const config: HardhatUserConfig = {
   solidity: "^0.8.24",
@@ -47,14 +47,21 @@ module.exports = {
         getParticleRpc(BNBChainTestnet.id),
       accounts: hardhatAccounts,
       chainId: BNBChainTestnet.id,
-    }
+    },
+    blastSepolia: {
+      url:
+        getParticleRpc(BlastSepolia.id),
+      accounts: hardhatAccounts,
+      chainId: BlastSepolia.id,
+    },
   },
   etherscan: {
     apiKey: {
       sepolia: process.env.ETHEREUM_ETHERSCAN_API_KEY,
       baseSepolia: process.env.BASE_ETHERSCAN_API_KEY,
       arbitrumSepolia: process.env.ARBITRUM_ETHERSCAN_API_KEY,
-      bnbTestnet: process.env.BNB_ETHERSCAN_API_KEY
+      bnbTestnet: process.env.BNB_ETHERSCAN_API_KEY,
+      blastSepolia: process.env.BLAST_ETHERSCAN_API_KEY
     },
     customChains: [
       {
@@ -88,6 +95,15 @@ module.exports = {
           apiURL: "https://api-testnet.bscscan.com/api",
           browserURL: "https://testnet.bscscan.com/",
         }
+      },
+      {
+        network: "blastSepolia",
+        chainId: BlastSepolia.id,
+        urls: {
+          apiURL: "https://api-sepolia.blastscan.io/api",
+          browserURL: "https://sepolia.blastscan.io/",
+        }
+        
       }
     ]
   },
